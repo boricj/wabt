@@ -312,6 +312,7 @@ set(WABT_LIBRARY_CC
   src/wast-parser.cc
   src/wat-writer.cc
   src/c-writer.cc
+  src/hpppl-writer.cc
   ${CWRITER_TEMPLATE_SRC}
 
   # TODO(binji): Move this into its own library?
@@ -536,6 +537,13 @@ if (BUILD_TOOLS)
   wabt_executable(
     NAME wasm2c
     SOURCES src/tools/wasm2c.cc
+    INSTALL
+  )
+
+  # wasm2hpppl
+  wabt_executable(
+    NAME wasm2hpppl
+    SOURCES src/tools/wasm2hpppl.cc
     INSTALL
   )
 
